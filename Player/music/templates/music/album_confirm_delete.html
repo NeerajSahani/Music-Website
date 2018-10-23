@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+<title>Are you sure? | Admin Page</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+
+
+
+    
+    <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+    <script type="text/javascript" src="/static/admin/js/cancel.js"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css" />
+    
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+
+<body class=" app-music model-album delete-confirmation"
+  data-admin-utc-offset="19800">
+
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>Are you sure?</h1>
+        
+
+    <p>Are you sure you want to delete the album "Honey Hits"? All of the following related items will be deleted:</p>
+    
+<h2>Summary</h2>
+<ul>
+    
+    <li>Albums: 1</li>
+    
+    <li>Songs: 3</li>
+    
+</ul>
+
+    <h2>Objects</h2>
+    <ul>	<li>Album: <a href="/admin/music/album/1/change/">Honey Hits</a>
+	<ul>
+		<li>Song: <a href="/admin/music/song/1/change/">Brown Rang</a></li>
+		<li>Song: <a href="/admin/music/song/2/change/">Love Dose</a></li>
+		<li>Song: <a href="/admin/music/song/3/change/">Love Dose</a></li>
+	</ul>
+	</li></ul>
+    <form method="post"><input type='hidden' name='csrfmiddlewaretoken' value='hfObZDd6AqAfJL6U3xLfBsNoWRbFCqSxIHY4uQVj4fxqtkBAib9zqA2L3zIfDOQe' />
+    <div>
+    <input type="hidden" name="post" value="yes" />
+    
+    
+    <input type="submit" value="Yes, I'm sure" />
+    <a href="#" class="button cancel-link">No, take me back</a>
+    </div>
+    </form>
+
+
+        
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+</html>

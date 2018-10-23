@@ -1,0 +1,62 @@
+{% extends 'music/Base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-body">
+            <div class="panel-heading">
+                {% if album.image %}
+                    <img src="{{ album.image.url }}" alt="not found" style="width: 300px;height: 200px; float: left;">
+                {% endif %}
+                <b>
+                    <p style="float: left; padding-top: 10px">Artist {{ album.artiste }}<br>
+                        Genre:{{ album.genre }}<br>
+                        Released:{{ album.released }}<br>
+                        Added :{{ album.created }}<br>
+                    </p>
+                </b>
+            </div>
+        </div>
+        <h3>
+            <a href="{% url 'music:UpdateAlbum' album.id %}"><span class="label label-default">Update Album</span></a>
+            <a href="{% url 'music:AddSong' album.id %}"><span class="label label-default">Upload Song</span></a>
+        </h3>
+
+        <!-- Table -->
+        <table class="table">
+            <tr>
+                <th>Song</th>
+                <th>Singer</th>
+                <th>Duration</th>
+                <th>genre</th>
+                <th>rating</th>
+                <th>Play</th>
+                <th>Actions</th>
+            </tr>
+            {% for i in album.song_set.all %}
+                <tr>
+                    <td>{{ i.song_name }}</td>
+                    <td>{{ i.song_artist }}</td>
+                    <td>{{ i.duration }}</td>
+                    <td>{{ album.genre }}</td>
+                    <td>{{ i.rating }}</td>
+                    <td>
+                        <audio src="{{ i.song.url }}" controls></audio>
+                    </td>
+                    <td><span class="glyphicon glyphicon-heart-empty"></span>
+                        <a href="{% url 'music:UpdateSong' i.id %}">
+                            <span class="glyphicon glyphicon-edit"> </span>
+                        </a>
+                        <a href="{% url 'music:DeleteSong' i.id %}">
+                            <span class="glyphicon glyphicon-trash"> </span>
+                        </a>
+                        <a href="{{ i.song.url }}" download>
+                            <span class="glyphicon glyphicon-download-alt"></span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

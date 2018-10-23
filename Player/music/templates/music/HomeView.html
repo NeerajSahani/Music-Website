@@ -1,0 +1,27 @@
+{% extends 'music/Base.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+    <div class="row ">
+        {% for i in album %}
+            <div class="col-sm-6 col-md-4 ">
+                <div class="thumbnail" >
+                    {% if i.image %}
+                        <img src="{{ i.image.url }}" alt="Image not found" style="height:350px">
+                    {% endif %}
+                    <div class="caption">
+                        <h3>{{ i.name }}</h3>
+                        <p>Artist:{{ i.artist }}</p>
+                        <p>Released:{{ i.released }}</p>
+                        <p>
+                            <a href="{% url 'music:AlbumView' i.id %}" class="btn btn-primary" role="button">View</a>
+                            <a href="{% url 'music:UpdateAlbum' i.id %}" class="btn btn-primary" role="button">Edit</a>
+                            <a href="{% url 'music:DeleteAlbum' i.id %}" class="btn btn-primary" role="button">delete</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <h1>No albums updated</h1>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'music/Base.html' %}
+{% block title %}Signup{% endblock %}
+{% block body %}
+    <style>
+        input{
+            width: 100%;
+            height: 40px;
+            border: whitesmoke 2px solid;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+    input[type="checkbox"] {
+        width: 50%;
+        float: left;
+        height: 20px;
+    }
+    </style>
+
+    <div style="padding-left: 20px">
+        <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}
